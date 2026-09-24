@@ -865,7 +865,7 @@
                                     <path
                                         stroke-linecap="round"
                                         stroke-linejoin="round"
-                                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 00-2 2z"
                                     />
 
                                 </svg>
@@ -1243,7 +1243,7 @@
         ================================================== */
 
         const SCRIPT_URL =
-            "https://script.google.com/macros/s/AKfycbx2_AqddVhKAETpTraHWLMSTKp-roQWzL_czk5lYzXwmToqrQSwUKjcS_pg1kN5sJghIw/exec";
+            "https://script.google.com/macros/s/AKfycbzbDujF3XDmzbFD3Od4HFWSh2fw_Tui7mnPDVbrtlvK9Df11elfiRFdTpNtb9Up27Y3/exec";
 
 
         /* ==================================================
@@ -1386,7 +1386,56 @@
 
 
                 /* ==========================================
-                   LOGIN BERHASIL
+                   PRC00 — TESTING UNLIMITED
+                ========================================== */
+
+                if (result.testing === true) {
+
+                    sessionStorage.setItem(
+                        "prcLoggedIn",
+                        "true"
+                    );
+
+                    sessionStorage.setItem(
+                        "prcPassword",
+                        result.password
+                    );
+
+                    sessionStorage.setItem(
+                        "prcJenis",
+                        result.jenis
+                    );
+
+                    sessionStorage.setItem(
+                        "prcPaket",
+                        result.paket
+                    );
+
+                    sessionStorage.setItem(
+                        "prcTesting",
+                        "true"
+                    );
+
+                    sessionStorage.removeItem(
+                        "prcFirstLogin"
+                    );
+
+                    sessionStorage.removeItem(
+                        "prcExpiry"
+                    );
+
+                    openDashboard(
+                        result.jenis,
+                        result.paket,
+                        null
+                    );
+
+                    return;
+                }
+
+
+                /* ==========================================
+                   LOGIN NORMAL
                 ========================================== */
 
                 const expiry =
@@ -1406,7 +1455,8 @@
                 }
 
 
-                /* Simpan sesi */
+                /* Simpan sesi normal */
+
                 sessionStorage.setItem(
                     "prcLoggedIn",
                     "true"
@@ -1435,6 +1485,10 @@
                 sessionStorage.setItem(
                     "prcExpiry",
                     String(expiry)
+                );
+
+                sessionStorage.removeItem(
+                    "prcTesting"
                 );
 
 
@@ -1488,9 +1542,18 @@
                     : jenis;
 
 
-            accessExpiry.textContent =
-                "Berlaku sampai " +
-                formatDate(expiry);
+            if (expiry === null) {
+
+                accessExpiry.textContent =
+                    "TEST ACCESS • UNLIMITED";
+
+            } else {
+
+                accessExpiry.textContent =
+                    "Berlaku sampai " +
+                    formatDate(expiry);
+
+            }
 
 
             applyAccessControl(jenis);
@@ -1609,6 +1672,10 @@
                 "prcExpiry"
             );
 
+            sessionStorage.removeItem(
+                "prcTesting"
+            );
+
 
             dashboard.style.display =
                 'none';
@@ -1666,6 +1733,11 @@
                     "prcPaket"
                 );
 
+            const testing =
+                sessionStorage.getItem(
+                    "prcTesting"
+                ) === "true";
+
             const expiry =
                 Number(
                     sessionStorage.getItem(
@@ -1673,6 +1745,31 @@
                     )
                 );
 
+
+            /* ==========================================
+               PRC00 — RESTORE TESTING SESSION
+            ========================================== */
+
+            if (
+                loggedIn === "true" &&
+                jenis &&
+                paket &&
+                testing
+            ) {
+
+                openDashboard(
+                    jenis,
+                    paket,
+                    null
+                );
+
+                return;
+            }
+
+
+            /* ==========================================
+               NORMAL SESSION
+            ========================================== */
 
             if (
                 loggedIn === "true" &&
