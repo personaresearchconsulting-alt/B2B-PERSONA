@@ -13,590 +13,424 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f5f0;
-      color: #0b2340;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f2efe6;
+      color: #06172a;
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* =========================
-       TOP BRAND BAR
-    ========================= */
+    /* TOPBAR */
     .topbar {
-      background: #0b2340;
-      color: #f7f1e3;
-      padding: 16px 30px;
+      background: #06172a;
+      color: #ffffff;
+      padding: 18px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 3px solid #c9a45c;
+      border-bottom: 4px solid #b88e3d;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .brand {
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #ffffff;
     }
 
     .official {
       font-size: 11px;
-      letter-spacing: 1px;
-      color: #d8c08b;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #06172a;
+      background: #c9a45c;
+      padding: 5px 14px;
+      border-radius: 20px;
       text-transform: uppercase;
     }
 
-    /* =========================
-       MAIN
-    ========================= */
+    /* MAIN */
     main {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 55px 25px 70px;
+      padding: 60px 24px 80px;
     }
 
     .hero {
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 50px;
     }
 
     .hero-label {
+      display: inline-block;
       font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: #a07c35;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      color: #926d24;
+      background: #e8ded0;
+      padding: 6px 18px;
+      border-radius: 30px;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
+      border: 1.5px solid #b88e3d;
     }
 
     .hero h1 {
-      font-size: 36px;
-      line-height: 1.2;
-      font-weight: 700;
-      margin-bottom: 15px;
-      color: #0b2340;
+      font-size: 38px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #06172a;
+      letter-spacing: -0.5px;
     }
 
     .hero p {
       max-width: 680px;
       margin: 0 auto;
-      color: #596575;
-      font-size: 15px;
+      color: #1c2d42;
+      font-size: 16px;
       line-height: 1.7;
+      font-weight: 600;
     }
 
-    /* =========================
-       SECTION
-    ========================= */
+    /* SECTION */
     .section-title {
       display: flex;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 22px;
+      gap: 16px;
+      margin-bottom: 28px;
     }
 
     .section-title h2 {
-      font-size: 18px;
-      letter-spacing: 0.5px;
-      white-space: nowrap;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #06172a;
+      text-transform: uppercase;
     }
 
     .section-line {
-      height: 1px;
-      background: #d8d0c2;
+      height: 3px;
+      background: linear-gradient(90deg, #b88e3d 0%, rgba(184, 142, 61, 0.2) 100%);
       flex: 1;
     }
 
-    /* =========================
-       PROGRAM GRID
-    ========================= */
+    /* GRID */
     .program-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 24px;
     }
 
+    /* CARD STYLES */
     .program-card {
-      display: block;
+      background: #ffffff;
+      border: 2px solid #334862;
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       text-decoration: none;
       color: inherit;
-      background: #ffffff;
-      border: 1px solid #ddd7cb;
-      border-radius: 14px;
-      padding: 28px;
-      min-height: 190px;
       position: relative;
-      overflow: hidden;
       transition: all 0.25s ease;
-    }
-
-    .program-card::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: #c9a45c;
-      opacity: 0;
-      transition: opacity 0.25s ease;
+      box-shadow: 0 4px 12px rgba(6, 23, 42, 0.06);
     }
 
     .program-card:hover {
-      transform: translateY(-4px);
-      border-color: #c9a45c;
-      box-shadow: 0 12px 30px rgba(11, 35, 64, 0.08);
+      transform: translateY(-5px);
+      border-color: #b88e3d;
+      box-shadow: 0 12px 28px rgba(6, 23, 42, 0.15);
     }
 
-    .program-card:hover::after {
-      opacity: 1;
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
     }
 
     .card-number {
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 12px;
+      font-weight: 800;
       letter-spacing: 1.5px;
-      color: #a07c35;
-      margin-bottom: 18px;
+      color: #926d24;
+    }
+
+    .card-badge {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #06172a;
+      background: #e9e2d3;
+      padding: 4px 12px;
+      border-radius: 12px;
+      border: 1px solid #c5bdad;
     }
 
     .card-title {
       font-size: 23px;
-      font-weight: 700;
-      color: #0b2340;
-      margin-bottom: 10px;
+      font-weight: 800;
+      color: #06172a;
+      margin-bottom: 12px;
+      line-height: 1.3;
     }
 
     .card-description {
-      color: #687384;
+      color: #1c2d42;
+      font-size: 14px;
+      line-height: 1.65;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    .card-action {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #06172a;
+      transition: color 0.2s;
+    }
+
+    .program-card:hover .card-action {
+      color: #926d24;
+    }
+
+    /* MULTI-BUTTON FOR PROGRAM 05 */
+    .card-links-wrapper {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding-top: 10px;
+    }
+
+    .card-btn {
+      text-align: center;
+      padding: 12px 14px;
       font-size: 13px;
-      line-height: 1.6;
-      max-width: 430px;
+      font-weight: 800;
+      color: #06172a;
+      background: #f7f5f0;
+      border: 2px solid #06172a;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.25s ease;
     }
 
-    .card-arrow {
-      position: absolute;
-      right: 25px;
-      bottom: 24px;
-      font-size: 22px;
-      color: #c9a45c;
-      transition: transform 0.25s ease;
+    .card-btn:hover {
+      background: #b88e3d;
+      color: #ffffff;
+      border-color: #b88e3d;
+      box-shadow: 0 4px 12px rgba(184, 142, 61, 0.3);
     }
 
-    .program-card:hover .card-arrow {
-      transform: translateX(5px);
+    .card-btn.primary {
+      background: #06172a;
+      color: #ffffff;
+      border-color: #06172a;
     }
 
-    /* =========================
-       INFO
-    ========================= */
+    .card-btn.primary:hover {
+      background: #b88e3d;
+      border-color: #b88e3d;
+      color: #ffffff;
+    }
+
+    /* INFO BOX */
     .info-box {
-      margin-top: 42px;
-      padding: 22px 25px;
-      border: 1px solid #ddd7cb;
-      border-radius: 12px;
-      background: #fbfaf7;
+      margin-top: 50px;
+      padding: 24px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 2px solid #334862;
       text-align: center;
     }
 
     .info-box p {
-      font-size: 12px;
+      font-size: 14px;
+      color: #1c2d42;
       line-height: 1.7;
-      color: #697384;
+      font-weight: 600;
     }
 
     .info-box strong {
-      color: #0b2340;
+      color: #06172a;
+      font-weight: 800;
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
+    /* FOOTER */
     footer {
-      border-top: 1px solid #ddd7cb;
-      padding: 25px;
+      border-top: 2px solid #334862;
+      padding: 30px;
       text-align: center;
-      background: #f2efe8;
+      background: #e5e0d4;
     }
 
     footer .footer-brand {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #0b2340;
-      margin-bottom: 7px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #06172a;
+      margin-bottom: 6px;
     }
 
     footer p {
-      font-size: 11px;
-      color: #7b8490;
-      line-height: 1.6;
+      font-size: 12px;
+      color: #38495c;
+      font-weight: 600;
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================= */
-    @media (max-width: 700px) {
-
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
       .topbar {
-        padding: 14px 18px;
+        padding: 14px 20px;
       }
-
       .brand {
-        font-size: 14px;
+        font-size: 15px;
       }
-
-      .official {
-        font-size: 9px;
-      }
-
       main {
         padding: 40px 18px 55px;
       }
-
-      .hero {
-        margin-bottom: 38px;
-      }
-
-      .hero h1 {
-        font-size: 29px;
-      }
-
-      .hero p {
-        font-size: 14px;
-      }
-
       .program-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
       }
-
-      .program-card {
-        min-height: 170px;
-        padding: 24px;
+      .card-links-wrapper {
+        grid-template-columns: 1fr;
       }
-
-      .card-title {
-        font-size: 21px;
+      .hero h1 {
+        font-size: 28px;
       }
-
-      .section-title h2 {
-        font-size: 16px;
-      }
-
     }
   </style>
 </head>
 
 <body>
 
-  <!-- =========================
-       TOP BRAND BAR
-  ========================= -->
-
+  <!-- TOP BRAND BAR -->
   <header class="topbar">
-
-    <div class="brand">
-      Persona Research &amp; Consulting
-    </div>
-
-    <div class="official">
-      Official
-    </div>
-
+    <div class="brand">Persona Research &amp; Consulting</div>
+    <div class="official">Official</div>
   </header>
 
-
-  <!-- =========================
-       MAIN CONTENT
-  ========================= -->
-
+  <!-- MAIN CONTENT -->
   <main>
 
     <section class="hero">
-
-      <div class="hero-label">
-        CAT PRACTICE &amp; TUTORING CLASSES
-      </div>
-
-      <h1>
-        Test Preparation &amp; Selection
-      </h1>
-
-      <p>
-        Sistem latihan dan persiapan seleksi berbasis komputer
-        untuk kebutuhan pembinaan kelas dan program persiapan seleksi.
-      </p>
-
+      <div class="hero-label">CAT PRACTICE &amp; TUTORING CLASSES</div>
+      <h1>Test Preparation &amp; Selection</h1>
+      <p>Sistem latihan dan persiapan seleksi berbasis komputer untuk kebutuhan pembinaan kelas dan program persiapan seleksi terstruktur.</p>
     </section>
 
-
-    <!-- =========================
-         PROGRAMS
-    ========================= -->
-
+    <!-- PROGRAMS SECTION -->
     <section>
 
       <div class="section-title">
-
-        <h2>
-          PROGRAM PREPARATION
-        </h2>
-
+        <h2>PROGRAM PREPARATION</h2>
         <div class="section-line"></div>
-
       </div>
-
 
       <div class="program-grid">
 
-
-        <!-- =====================
-             PROGRAM 01 — POLRI
-        ====================== -->
-
-        <a
-          href="https://personaresearchconsulting-alt.github.io/B2B-POLRI/"
-          class="program-card"
-        >
-
-          <div class="card-number">
-            PROGRAM 01
+        <!-- PROGRAM 01 — POLRI -->
+        <a href="https://personaresearchconsulting-alt.github.io/B2B-POLRI/" class="program-card">
+          <div>
+            <div class="card-top">
+              <span class="card-number">PROGRAM 01</span>
+              <span class="card-badge">SELEKSI</span>
+            </div>
+            <div class="card-title">POLRI</div>
+            <div class="card-description">Materi dan sistem latihan untuk persiapan seleksi POLRI, termasuk latihan kecerdasan, kepribadian, kecermatan, dan komponen terkait.</div>
           </div>
-
-          <div class="card-title">
-            POLRI
-          </div>
-
-          <div class="card-description">
-            Materi dan sistem latihan untuk persiapan seleksi
-            POLRI, termasuk latihan kecerdasan, kepribadian,
-            kecermatan, dan komponen terkait.
-          </div>
-
-          <div class="card-arrow">
-            →
-          </div>
-
+          <div class="card-action">Buka Program <span>→</span></div>
         </a>
 
-
-        <!-- =====================
-             PROGRAM 02 — TNI
-        ====================== -->
-
-        <a
-          href="https://personaresearchconsulting-alt.github.io/B2B-TNI/"
-          class="program-card"
-        >
-
-          <div class="card-number">
-            PROGRAM 02
+        <!-- PROGRAM 02 — TNI -->
+        <a href="https://personaresearchconsulting-alt.github.io/B2B-TNI/" class="program-card">
+          <div>
+            <div class="card-top">
+              <span class="card-number">PROGRAM 02</span>
+              <span class="card-badge">SELEKSI</span>
+            </div>
+            <div class="card-title">TNI</div>
+            <div class="card-description">Sistem latihan berbasis komputer untuk kebutuhan persiapan seleksi TNI dan latihan terstruktur.</div>
           </div>
-
-          <div class="card-title">
-            TNI
-          </div>
-
-          <div class="card-description">
-            Sistem latihan berbasis komputer untuk kebutuhan
-            persiapan seleksi TNI dan latihan terstruktur.
-          </div>
-
-          <div class="card-arrow">
-            →
-          </div>
-
+          <div class="card-action">Buka Program <span>→</span></div>
         </a>
 
-
-        <!-- =====================
-             PROGRAM 03 — KEDINASAN
-        ====================== -->
-
-        <a
-          href="https://personaresearchconsulting-alt.github.io/B2B-SEKDIN/"
-          class="program-card"
-        >
-
-          <div class="card-number">
-            PROGRAM 03
+        <!-- PROGRAM 03 — KEDINASAN -->
+        <a href="https://personaresearchconsulting-alt.github.io/B2B-SEKDIN/" class="program-card">
+          <div>
+            <div class="card-top">
+              <span class="card-number">PROGRAM 03</span>
+              <span class="card-badge">SKD</span>
+            </div>
+            <div class="card-title">KEDINASAN</div>
+            <div class="card-description">Latihan persiapan seleksi kedinasan dengan komponen SKD dan sistem latihan berbasis komputer.</div>
           </div>
-
-          <div class="card-title">
-            KEDINASAN
-          </div>
-
-          <div class="card-description">
-            Latihan persiapan seleksi kedinasan dengan
-            komponen SKD dan sistem latihan berbasis komputer.
-          </div>
-
-          <div class="card-arrow">
-            →
-          </div>
-
+          <div class="card-action">Buka Program <span>→</span></div>
         </a>
 
-
-        <!-- =====================
-             PROGRAM 04 — UJI KOMPUTER
-        ====================== -->
-
-        <a
-          href="https://personaresearchconsulting-alt.github.io/TRYOUT-UJI-KOMPUTER-PAKET-REGULER-PROTECTED/"
-          class="program-card"
-        >
-
-          <div class="card-number">
-            PROGRAM 04
+        <!-- PROGRAM 04 — UJI KOMPUTER -->
+        <a href="https://personaresearchconsulting-alt.github.io/TRYOUT-UJI-KOMPUTER-PAKET-REGULER-PROTECTED/" class="program-card">
+          <div>
+            <div class="card-top">
+              <span class="card-number">PROGRAM 04</span>
+              <span class="card-badge">SIMULASI</span>
+            </div>
+            <div class="card-title">UJI KOMPUTER</div>
+            <div class="card-description">Latihan dan simulasi untuk mempersiapkan peserta menghadapi tahapan uji komputer dalam proses seleksi.</div>
           </div>
-
-          <div class="card-title">
-            UJI KOMPUTER
-          </div>
-
-          <div class="card-description">
-            Latihan dan simulasi untuk mempersiapkan peserta
-            menghadapi tahapan uji komputer dalam proses seleksi.
-          </div>
-
-          <div class="card-arrow">
-            →
-          </div>
-
+          <div class="card-action">Buka Program <span>→</span></div>
         </a>
 
-
-        <!-- =====================
-             PROGRAM 05 — TES KORAN CAT
-        ====================== -->
-
-        <a
-          href="https://personaresearchconsulting-alt.github.io/KORAN-CAT/"
-          class="program-card"
-        >
-
-          <div class="card-number">
-            PROGRAM 05
+        <!-- PROGRAM 05 — TES KORAN CAT DAN HITUNGAN CEPAT -->
+        <div class="program-card">
+          <div>
+            <div class="card-top">
+              <span class="card-number">PROGRAM 05</span>
+              <span class="card-badge">CAT WORKOUT</span>
+            </div>
+            <div class="card-title">TES KORAN CAT DAN HITUNGAN CEPAT</div>
+            <div class="card-description">Simulasi tes koran berbasis komputer dan latihan hitung cepat untuk melatih ketahanan, ketelitian, kecepatan kerja, serta stabilitas secara bertahap.</div>
           </div>
-
-          <div class="card-title">
-            TES KORAN CAT
+          <div class="card-links-wrapper">
+            <a href="https://personaresearchconsulting-alt.github.io/KORAN-CAT/" class="card-btn primary">Tes Koran CAT</a>
+            <a href="https://personaresearchconsulting-alt.github.io/KREAPLIN/" class="card-btn">Hitung Cepat CAT</a>
           </div>
+        </div>
 
-          <div class="card-description">
-            Simulasi dan latihan tes koran berbasis komputer
-            untuk melatih ketahanan, ketelitian, dan kecepatan kerja.
+        <!-- PROGRAM 06 — TES KECERMATAN -->
+        <a href="https://personaresearchconsulting-alt.github.io/KECERMATAN-POLRI/" class="program-card">
+          <div>
+            <div class="card-top">
+              <span class="card-number">PROGRAM 06</span>
+              <span class="card-badge">KONSENTRASI</span>
+            </div>
+            <div class="card-title">TES KECERMATAN</div>
+            <div class="card-description">Latihan khusus tes kecermatan berbasis komputer (simbol/angka hilang) untuk mengukur ketelitian, kecermatan, dan konsentrasi.</div>
           </div>
-
-          <div class="card-arrow">
-            →
-          </div>
-
+          <div class="card-action">Buka Program <span>→</span></div>
         </a>
-
-
-        <!-- =====================
-             PROGRAM 06 — HITUNG CEPAT CAT
-        ====================== -->
-
-        <a
-          href="//personaresearchconsulting-alt.github.io/KREAPLIN/"
-          class="program-card"
-        >
-
-          <div class="card-number">
-            PROGRAM 06
-          </div>
-
-          <div class="card-title">
-            TES HITUNG CEPAT CAT
-          </div>
-
-          <div class="card-description">
-            Latihan tes koran versi kecil untuk mengukur stabilitas,
-            kecepatan, dan ketelitian kerja secara bertahap.
-          </div>
-
-          <div class="card-arrow">
-            →
-          </div>
-
-        </a>
-
-
-        <!-- =====================
-             PROGRAM 07 — TES KECERMATAN
-        ====================== -->
-
-        <a
-          href="https://personaresearchconsulting-alt.github.io/KECERMATAN-POLRI/"
-          class="program-card"
-        >
-
-          <div class="card-number">
-            PROGRAM 07
-          </div>
-
-          <div class="card-title">
-            TES KECERMATAN
-          </div>
-
-          <div class="card-description">
-            Latihan khusus tes kecermatan berbasis komputer (simbol/angka hilang) 
-            untuk mengukur ketelitian, kecermatan, dan konsentrasi.
-          </div>
-
-          <div class="card-arrow">
-            →
-          </div>
-
-        </a>
-
 
       </div>
-
     </section>
 
-
-    <!-- =========================
-         INFORMATION
-    ========================= -->
-
+    <!-- INFORMATION BOX -->
     <div class="info-box">
-
-      <p>
-
-        <strong>
-          Persona Class
-        </strong>
-
-        merupakan portal program
-        latihan dari Persona Research &amp; Consulting.
-        Akses materi dan latihan pada masing-masing program
-        mengikuti sistem akses yang berlaku.
-
-      </p>
-
+      <p><strong>Persona Class</strong> merupakan portal program latihan dari Persona Research &amp; Consulting. Akses materi dan latihan pada masing-masing program mengikuti sistem akses yang berlaku.</p>
     </div>
 
   </main>
 
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
+  <!-- FOOTER -->
   <footer>
-
-    <div class="footer-brand">
-      PERSONA RESEARCH &amp; CONSULTING
-    </div>
-
-    <p>
-      Practice. Prepare. Progress.
-    </p>
-
+    <div class="footer-brand">PERSONA RESEARCH &amp; CONSULTING</div>
+    <p>Practice. Prepare. Progress.</p>
   </footer>
 
 </body>
